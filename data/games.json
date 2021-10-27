@@ -1,0 +1,26 @@
+{
+  "0": {
+    "title": "Super Mario Party",
+    "price": 79.95,
+    "status": "own",
+    "rating": 4,
+    "genre": ["party", "Multiplayer"],
+    "developer": "nintendo"
+  },
+  "1": {
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "price": 79.95,
+    "status": "own",
+    "rating": 5,
+    "genre": ["Adventure", "Action", "Role-Playing"],
+    "developer": "nintendo"
+  },
+  "2": {
+    "title": "Diablo II: Resurrected",
+    "price": 79.95,
+    "status": "own",
+    "rating": 3,
+    "genre": ["Action", "Adventure", "Party", "Role-Playing"],
+    "developer": "Blizzard Entertainment"
+  }
+}

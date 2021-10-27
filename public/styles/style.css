@@ -1,0 +1,49 @@
+body {
+  --star-color: #f2b01e;
+  --star-default-color: #f0f0f0;
+  --background-color: #2a2a2a;
+}
+
+/* body {
+  background: var(--background-color);
+  padding: 3rem;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+.rating-box {
+  color: var(--star-default-color);
+
+  /* margin: 3rem auto; */
+  height: 2rem;
+  /* width: 25rem; */
+  display: flex;
+}
+
+.rating-star {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  position: relative;
+  display: block;
+
+  /* float: left; */
+}
+
+.full-star:before {
+  color: var(--star-color);
+  content: '\2605';
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.empty-star:before {
+  content: '\2605';
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}

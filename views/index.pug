@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  h1 Welcome to #{title}
+  button.btn.btn-primary.text-capitalize(data-bs-toggle="collapse" data-bs-target="#newGame" aria-expanded="false" aria-controls="newGame") Add new game
+  form.collapse.m-3.py-3(id="newGame" action="/saveNewGame" method="post")
+    .form-floating.mb-3
+      input(type="text" class="form-control" id="titleInput" placeHolder="")
+      label(for="titleInput") Game Title
+
+    .form-floating.mb-3
+      input(type="number" class="form-control" id="priceInput" placeHolder="")
+      label(for="priceInput") Price
+
+    .form-floating.mb-3
+      input(type="number" class="form-control" id="ratingInput" min="0" max="5" placeHolder="")
+      label(for="ratingInput") Rating (0-5)
+
+    .form-floating.mb-3
+      select.form-select#statusSelect
+        option(selected) Wanted
+        option(value="1") Own
+        option(value="2") Sold
+      label(for="statusSelect") Status (Own, Want, Sold)
+
+    .form-floating.mb-3
+      input(type="text" class="form-control" id="genreInput" placeHolder="")
+      label(for="genreInput") Genre (Separate by comma)
+
+    button.btn.btn-success.text-capitalize(type="submit").mx-3 Save
+    button.btn.btn-danger.text-capitalize(type="reset") Reset
+
+  each game in games
+    .card.my-5
+      .card-body
+        h3.card-title #{game.title}
+        span.small Price: $#{game.price}
+        .rating-box
+          //- #{game.rating} #{5-game.rating}
+          each _ in Array(game.rating)
+            span.rating-star.full-star
+          each _ in Array(5-game.rating)
+            span.rating-star.empty-star
+
+        .genre
+          each genre in game.genre
+            span.badge.bg-primary.text-capitalize.mx-1 #{genre}
+
+  //- pre= JSON.stringify(games, null, 2)
+
